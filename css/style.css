@@ -1,0 +1,32 @@
+.table{
+    border: 1px solid black;
+    background-color: blanchedalmond;
+}
+
+.numero{
+    background-color: aquamarine;
+    color: black;
+    border: 1px solid black;
+    width: 50px;
+}
+
+.igual {
+    background-color: aquamarine;
+    color: black;
+    border: 1px solid black;
+    width: 160px;
+}
+
+.color_display{
+    background-color: cornflowerblue;
+    color: black;
+    border: 1px solid black;
+    width: 100px;
+}
+
+.borrador {
+    background-color: aquamarine;
+    color: black;
+    border: 1px solid black;
+    width: 50px;
+}

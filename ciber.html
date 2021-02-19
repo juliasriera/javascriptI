@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/style.css">
+        <title>Javascript</title>
+
+        <script>
+
+//ejercicio 1
+
+console.log("Hola Mundo") 
+
+
+// ejercicio 2
+
+            alert("Júlia Sánchez");
+
+// Ejercicio 3
+
+            var nombre, apellido;
+
+            var nombre="Júlia"
+            var apellido="Sánchez"
+            var nombreCompleto= nombre + " " + apellido;
+            console.log(nombreCompleto)
+
+        </script>
+
+</head>
+
+    <body>   
+
+        <script>
+
+// Ejercicio 4 suma
+            var num1=19;
+            var num2=58;
+            var resultado = num1 + num2;
+            console.log ("La suma de 19 i 58 es " + resultado)
+
+
+//ejercicio 5
+
+var notaExamen =Math.round (Math.random()*10);
+
+if (notaExamen < 5){
+
+   alert("oooh has suspendido con un  "  + notaExamen + "  vuleve a intentarlo");
+}
+
+else {
+
+    alert("Muy bien!! Has aprobado con un " + notaExamen);
+
+}
+
+
+
+//ejercicio 6
+
+const p = 'Tinc un cotxe de color blau';
+
+console.log(p.replace('blau', 'verd'));
+
+
+
+let re = /o/gi;
+let phrase = 'Tinc un cotxe de color blau';
+let newphrase = phrase.replace(re,'u');
+console.log(newphrase)
+
+
+// ejercicio 7
+
+    var articulos = ["taula", "cadira", "ordinador", "llibreta"];
+    var contador = 0;
+
+    for (var i=0; i<4; i++){
+        console.log ("el objeto  " + articulos[i] + "  esta en la posicion  " + contador );
+        contador++;
+    }
+</script>
+
+
+<h3>Calculadora</h3>
+
+<script>
+
+    //Ejercicio 8, calculadora
+    
+    var valor1= "";
+    var valor2= "";
+    var acumulado = "";
+    var suma = false;
+    var resta= false;
+    var multiplica= false;
+    var divide = false;
+    
+        
+            function calculadora(numero){
+                     
+                        document.getElementById("resultado").value = acumulado + numero;
+                        valor1 = document.getElementById("resultado").value;
+                        acumulado = valor1;    
+             }  
+             
+            function sumar(){
+    
+                        valor2=acumulado;
+                        acumulado="";
+                        document.getElementById("resultado").value= acumulado;
+                        valor1="";
+                        suma=true;
+    
+             }
+    
+    
+            function restar(){
+     
+                        valor2=acumulado;
+                        acumulado="";
+                        document.getElementById("resultado").value= acumulado;
+                        valor1="";
+                        resta=true;
+    
+            }
+    
+            function multiplicar(){
+                        
+                        valor2=acumulado;
+                        acumulado="";
+                        document.getElementById("resultado").value= acumulado;
+                        valor1="";
+                        multiplica=true;
+    
+            }
+    
+            function dividir(){
+                      
+                        valor2=acumulado;
+                        acumulado="";
+                        document.getElementById("resultado").value= acumulado;
+                        valor1="";
+                        divide=true;
+            }
+    
+            function result(){
+                 
+                if (suma){
+    
+                        document.getElementById("resultado").value= parseInt(valor2) + parseInt(valor1);
+    
+                }
+    
+                else if (resta){
+     
+                        document.getElementById("resultado").value= parseInt(valor2) - parseInt(valor1);
+    
+                }
+    
+                else if (multiplica){
+    
+                        document.getElementById("resultado").value= parseInt(valor2) * parseInt(valor1);
+                        
+                }
+    
+                else if (divide){
+                     
+                        document.getElementById("resultado").value= parseInt(valor2) / parseInt(valor1);
+                }
+    
+            }
+                
+            function reset(){
+                
+                valor1="";
+                valor2="";
+                acumulado="";
+                document.getElementById("resultado").value= 0;
+            }
+             
+             
+    </script>
+    
+          
+    
+                <table class="table">
+                    <tbody id="calcular">
+        
+                    <tr>
+                      <td colspan="2">
+                      <input name="display" type="text" class="color_display" id="resultado"></td>
+                      <td><input name="borrar" type="button" class="borrador" id="borrar" value="C" onclick="reset()"></td>
+                    </tr>
+        
+                    <tr>
+                      <td><input name="num7" type="button" class="numero" id="siete" placeholder="7" value="7" onclick="calculadora(7)"></td>
+                      <td><input name="num8" type="button" class="numero" id="ocho" placeholder="8" value="8" onclick="calculadora(8)"></td>
+                      <td><input name="num9" type="button" class="numero" id="nueve" placeholder="9" value="9" onclick="calculadora(9)"></td>
+                    </tr>
+        
+                    <tr>
+                      <td><input name="num4" type="button" class="numero" id="cuatro" placeholder="4" value="4" onclick="calculadora(4)"></td>
+                      <td><input name="num5" type="button" class="numero" id="cinco" placeholder="5" value="5" onclick="calculadora(5)"></td>
+                      <td><input name="num6" type="button" class="numero" id="seis" placeholder="6" value="6" onclick="calculadora(6)"></td>
+        
+                    </tr>
+        
+                    <tr>
+                      <td><input name="num1" type="button" class="numero" id="uno" placeholder="1" value="1" onclick="calculadora(1)"></td>
+                      <td><input name="num2" type="button" class="numero" id="dos" placeholder="2" value="2" onclick="calculadora(2)"></td>
+                      <td><input name="num3" type="button" class="numero" id="tres" placeholder="3" value="3" onclick="calculadora(3)"></td>
+                    </tr>
+        
+                    <tr>
+                        <td><input name="num0" type="button" class="numero" id="cero" placeholder="0" value="0" onclick="calculadora(0)"></td>
+                        <td><input name="button" type="button" class="numero" id="sumar" placeholder="+" value="+" onclick="sumar()"></td>
+                        <td><input name="button2" type="button" class="numero" id="restar" placeholder="-" value="-" onclick="restar()"></td>
+                    </tr>
+                    <tr>
+                        <td><input name="button4" type="button" class="numero" id="dividir" placeholder="/" value="/" onclick="dividir()"></td>
+                        <td><input name="button3" type="button" class="numero" id="multiplicar" placeholder="*" value="*" onclick="multiplicar()"></td>
+                        <td><input name="button17" type="button" class="numero" id="coma" placeholder="," value="," onclick="calculadora()"></td>
+                      </tr>
+        
+                      <tr>
+                        <td colspan="3"><input name="button12" type="button" class="igual" id="button12" value="=" onclick="result()"></td>
+                      </tr>
+        
+                  </tbody></table>
+        
+                  <script>
+        
+                      document.getElementById("display").value=0;
+        
+                  </script>
+    
+</body>
+</html>
