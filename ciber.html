@@ -96,14 +96,16 @@ console.log(newphrase)
     var resta= false;
     var multiplica= false;
     var divide = false;
+    var resetear=false;
     
         
             function calculadora(numero){
-                     
+                      
                         document.getElementById("resultado").value = acumulado + numero;
                         valor1 = document.getElementById("resultado").value;
-                        acumulado = valor1;    
-             }  
+                        acumulado = valor1; 
+                       
+            }  
              
             function sumar(){
     
@@ -146,41 +148,51 @@ console.log(newphrase)
             }
     
             function result(){
+    
                  
                 if (suma){
     
                         document.getElementById("resultado").value= parseInt(valor2) + parseInt(valor1);
+                        acumulado=document.getElementById("resultado").value;
     
                 }
     
                 else if (resta){
      
                         document.getElementById("resultado").value= parseInt(valor2) - parseInt(valor1);
+                        acumulado=document.getElementById("resultado").value;
     
                 }
     
                 else if (multiplica){
     
                         document.getElementById("resultado").value= parseInt(valor2) * parseInt(valor1);
+                        acumulado=document.getElementById("resultado").value;
                         
                 }
     
                 else if (divide){
                      
                         document.getElementById("resultado").value= parseInt(valor2) / parseInt(valor1);
+                        acumulado=document.getElementById("resultado").value;
                 }
     
             }
-                
+       
             function reset(){
                 
                 valor1="";
                 valor2="";
                 acumulado="";
-                document.getElementById("resultado").value= 0;
+                document.getElementById("resultado").value= "0";
+                resetear=true;
+                suma=false;
+                resta=false;
+                multiplica=false;
+                dividie=false;
             }
              
-             
+    
     </script>
     
           
@@ -215,12 +227,12 @@ console.log(newphrase)
         
                     <tr>
                         <td><input name="num0" type="button" class="numero" id="cero" placeholder="0" value="0" onclick="calculadora(0)"></td>
-                        <td><input name="button" type="button" class="numero" id="sumar" placeholder="+" value="+" onclick="sumar()"></td>
-                        <td><input name="button2" type="button" class="numero" id="restar" placeholder="-" value="-" onclick="restar()"></td>
+                        <td><input name="button" type="button" class="operador" id="sumar" placeholder="+" value="+" onclick="sumar()"></td>
+                        <td><input name="button2" type="button" class="operador" id="restar" placeholder="-" value="-" onclick="restar()"></td>
                     </tr>
                     <tr>
-                        <td><input name="button4" type="button" class="numero" id="dividir" placeholder="/" value="/" onclick="dividir()"></td>
-                        <td><input name="button3" type="button" class="numero" id="multiplicar" placeholder="*" value="*" onclick="multiplicar()"></td>
+                        <td><input name="button4" type="button" class="operador" id="dividir" placeholder="/" value="/" onclick="dividir()"></td>
+                        <td><input name="button3" type="button" class="operador" id="multiplicar" placeholder="*" value="*" onclick="multiplicar()"></td>
                         <td><input name="button17" type="button" class="numero" id="coma" placeholder="," value="," onclick="calculadora()"></td>
                       </tr>
         
@@ -232,6 +244,7 @@ console.log(newphrase)
         
                   <script>
         
+                      
                       document.getElementById("display").value=0;
         
                   </script>
