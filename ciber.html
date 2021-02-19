@@ -129,6 +129,16 @@ console.log(newphrase)
                         suma=true;
     
                 }
+    
+                else if (divide){
+    
+                        valor2=acumulado;
+                        document.getElementById("resultado").value= acumulado;
+                        acumulado="";
+                        valor1="";
+                        divide=false;
+                        suma=true;
+                }
                 
                 else{ 
                         valor2=acumulado;
@@ -162,6 +172,16 @@ console.log(newphrase)
                         resta=true;
     
                 }
+    
+                else if (divide){
+    
+                        valor2=acumulado;
+                        document.getElementById("resultado").value= acumulado;
+                        acumulado="";
+                        valor1="";
+                        divide=false;
+                        resta=true;
+                }          
     
                     
                 else{
@@ -199,6 +219,16 @@ console.log(newphrase)
                         multiplica=true;
                        
                 }
+    
+                else if (divide){
+    
+                        valor2=acumulado;
+                        document.getElementById("resultado").value= acumulado;
+                        acumulado="";
+                        valor1="";
+                        divide=false;
+                        multiplica=true;
+                }
                  
                 else {
                         
@@ -212,12 +242,48 @@ console.log(newphrase)
             }
     
             function dividir(){
+    
+    
+                if(suma){
+    
+                        valor2=acumulado;
+                        document.getElementById("resultado").value= acumulado;
+                        acumulado="";
+                        valor1="";
+                        suma=false;
+                        divide=true;
+    
+    
+                } else if (resta) {
+    
+                        valor2=acumulado;
+                        document.getElementById("resultado").value= acumulado;
+                        acumulado="";
+                        valor1="";
+                        resta=false;
+                        divide=true;
+    
+                }
+    
+                else if(multiplica){
+              
+                        valor2=acumulado;
+                        document.getElementById("resultado").value= acumulado;
+                        acumulado="";
+                        valor1="";
+                        multiplica=false;
+                        resta=true;
+    
+                } else {
+    
                       
                         valor2=acumulado;
                         acumulado="";
                         document.getElementById("resultado").value= acumulado;
                         valor1="";
                         divide=true;
+    
+                }        
             }
     
             function result(){
